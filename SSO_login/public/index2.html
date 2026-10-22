@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="title">Website B: Fake SSO Login</title>
+  <link rel="stylesheet" href="style.css"/>
+  <meta name="theme-color" content="#444444"/>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      position: relative;
+    }
+    .login-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 { margin-bottom: 1rem; }
+    .btn {
+      display: block;
+      width: 250px;
+      margin: 0.5rem auto;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #fff;
+    }
+    .btn.google { background-color: #db4437; }
+    .btn.facebook { background-color: #1877f2; }
+    .btn.x { background-color: #000; }
+    .btn.github { background-color: #000; }
+
+    /* Language dropdown styles */
+    .lang-select {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.3rem 0.5rem;
+      font-size: 0.9rem;
+      border-radius: 0.3rem;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Language dropdown -->
+  <select class="lang-select" id="langDropdown">
+    <option value="en">English</option>
+    <option value="fr">Français</option>
+    <option value="es">Español</option>
+    <option value="de">Deutsch</option>
+    <option value="zh">中文</option>
+  </select>
+
+  <h1 data-i18n="title">Website B: Fake SSO Login</h1>
+
+  <div class="login-container">
+    <h1 data-i18n="login_title">Login with SSO</h1>
+
+    <button class="btn facebook" data-i18n="btn_facebook" onclick="login('facebook')">Login with Facebook</button>
+    <button class="btn google" data-i18n="btn_google" onclick="login('google')">Login with Google</button>
+    <button class="btn x" data-i18n="btn_x" onclick="login('x')">Login with X</button>
+    <button class="btn github" data-i18n="btn_github" onclick="login('github')">Login with GitHub</button>
+  </div>
+
+  <script>
+
+    const googlePages = {
+      en: 'google/1_login_pages/1_google_login.html',
+      fr: 'google/1_login_pages/1_google_login_french.html',
+      es: 'google/1_login_pages/1_google_login_spanish.html',
+      de: 'google/1_login_pages/1_google_login_german.html',
+      zh: 'google/1_login_pages/1_google_login_zh.html',
+      ru: 'google/1_login_pages/1_google_login_russian.html'
+    };
+
+    function login(provider) {
+      if (provider === 'google') {
+        window.location.href = googlePages[lang] || googlePages['en'];
+        //window.location.href = "1_login_pages/1_google_login.html";
+      } else if (provider == 'github'){ 
+        window.location.href = 'github/login/login1.html'
+      } 
+      else if (provider === 'x') {
+        window.location.href = 'https://www.x.com';
+        //window.location.href = 'X/0_homepage/0_homepage.html';
+      } else if(provider == 'facebook'){
+        //window.location.href = 'https://www.github.com';
+        window.location.href = 'facebook/login/facebook_login.html';
+        //window.location.href = 'https://www.facebook.com/login.php?skip_api_login=1&api_key=174829003346&kid_directed_site=0&app_id=174829003346&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv23.0%2Fdialog%2Foauth%3Fclient_id%3D174829003346%26state%3DAQCrgHMCqk6b1hr6CXsR8ffXMCm3elDdNiBxy4wx83MVYCWupNmLaccVHaSJ1QXqbwn6B59zA%252BUVq%252Fc5ZMbWZWCXND1C9K%252FAAPFVWl4%252FDVc3YXCAdZMlgrQzaHrGfyzBe78htsSqTDLodXAGobeHaqpI5Ao7KmU52eTiwhi6bp2vuNIWYEa8Btmw6uvprInm%252F5jLTCj7%252BtM9jn8f%252Fd0y5ka2HFSQ5cGC3CXGt9r6M4I2Agn99vEUsYZp%252BrzBUH031E8lTIezbrvkeF5yvm3VIOdmociVfGpPI%252FkDyhXGfIIe8vyN%252Bfcb8ZH%252FlzqD%252BLeRlGQVdUh%252F6xfXAufCUBEJEaU9DHumh7pkgwUwu5a6WI8CvVsE6Ma93MBJo8WnMpNvub9g4OHHyCHKdH%252Fr0p16CCL9LJPweuI48p%252FwUvnpipXLFIWCiuagYuqPwBN3TsnW2GqzmfE4DzUvTKIKtBMUp38%252FJVr3kWQ%253D%26redirect_uri%3Dhttps%253A%252F%252Faccounts.spotify.com%252Flogin%252Ffacebook%252Fredirect%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D8036da3e-7366-44d4-93e4-fbf3e719521a%26tp%3Dunspecified&cancel_url=https%3A%2F%2Faccounts.spotify.com%2Flogin%2Ffacebook%2Fredirect%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DAQCrgHMCqk6b1hr6CXsR8ffXMCm3elDdNiBxy4wx83MVYCWupNmLaccVHaSJ1QXqbwn6B59zA%252BUVq%252Fc5ZMbWZWCXND1C9K%252FAAPFVWl4%252FDVc3YXCAdZMlgrQzaHrGfyzBe78htsSqTDLodXAGobeHaqpI5Ao7KmU52eTiwhi6bp2vuNIWYEa8Btmw6uvprInm%252F5jLTCj7%252BtM9jn8f%252Fd0y5ka2HFSQ5cGC3CXGt9r6M4I2Agn99vEUsYZp%252BrzBUH031E8lTIezbrvkeF5yvm3VIOdmociVfGpPI%252FkDyhXGfIIe8vyN%252Bfcb8ZH%252FlzqD%252BLeRlGQVdUh%252F6xfXAufCUBEJEaU9DHumh7pkgwUwu5a6WI8CvVsE6Ma93MBJo8WnMpNvub9g4OHHyCHKdH%252Fr0p16CCL9LJPweuI48p%252FwUvnpipXLFIWCiuagYuqPwBN3TsnW2GqzmfE4DzUvTKIKtBMUp38%252FJVr3kWQ%253D%23_%3D_&display=page&locale=en_US&pl_dbl=0'
+      } 
+      else {
+        alert(`Redirecting to ${provider} login...`);
+      }
+    }
+
+    async function loadLanguage(language) {
+      try {
+        const response = await fetch(`./lang2/${language}.json`);
+        const data = await response.json();
+
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+          const key = el.getAttribute("data-i18n");
+          if (data[key]) {
+            if (el.tagName === "TITLE") {
+              document.title = data[key];
+            } else {
+              el.textContent = data[key];
+            }
+          }
+        });
+
+        // Update dropdown to match current language
+        document.getElementById('langDropdown').value = language;
+        lang = language;
+      } catch (e) {
+        console.error("Language file not found:", language);
+      }
+    }
+
+    function detectLanguage() {
+      const browserLang = navigator.language || navigator.userLanguage;
+      const short = browserLang.split("-")[0];
+      const supported = ["en", "fr", "es", "de", "zh"];
+      return supported.includes(short) ? short : "en";
+    }
+
+    function setCookie(name, value, days) {
+      const expires = days ? `; expires=${new Date(Date.now() + days*864e5).toUTCString()}` : "";
+      document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+      const cookies = document.cookie.split("; ").reduce((acc, c) => {
+        const [key, val] = c.split("=");
+        acc[key] = decodeURIComponent(val);
+        return acc;
+      }, {});
+      return cookies[name];
+    }
+
+
+    let lang = getCookie('lang_pwa') || detectLanguage();
+    langDropdown.value = lang;
+    loadLanguage(lang);
+
+    // Dropdown change handler
+    document.getElementById('langDropdown').addEventListener('change', (e) => {
+      const selectedLang = e.target.value;
+      loadLanguage(selectedLang);
+      setCookie('lang_pwa', selectedLang, 30);
+    });
+  </script>
+</body>
+</html>

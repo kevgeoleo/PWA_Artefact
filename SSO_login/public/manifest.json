@@ -1,0 +1,21 @@
+{
+  "name": "SamplePWA",
+  "short_name": "PWA",
+  "start_url": "index2.html",
+  "display": "standalone" ,     
+  "_comment": "standalone means it will not have browser UI like address bar", 
+  "background_color": "#000000",
+  "theme_color": "#444444",
+  "icons": [
+    {
+      "src": "PWAicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "PWAicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
