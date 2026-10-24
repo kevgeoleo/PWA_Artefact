@@ -26,7 +26,7 @@ The end-to-end PWA attack demonstrated in Sections 2–4 of the paper:
 - `service-worker.js` — service worker registration required for installability
 - Fake SSO/2FA pages that replicate the in-window navigation bar in HTML/CSS
 - Install dependencies from `package.json` using `npm install`
-- `server.js` — local Node.js server for running the PoC (`node server/server.py`, serves on `http://localhost:3005`)
+- `server/server.js` — local Node.js server for running the PoC (`node server/server.py`, serves on `http://localhost:3005`)
 - Backend automation script(s) implementing the credential-relay and 2FA-bypass pipeline described in Section 3 (Playwright-based, SMS-OTP handling shown in Fig. 7 of the paper)
 
 ### `Web_Measurement/`
