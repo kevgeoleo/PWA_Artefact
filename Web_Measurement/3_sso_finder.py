@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 '''
 Run this code using the command:
     python3 4_playwright.py <input_filename> <output_filename>
