@@ -36,7 +36,7 @@ The four-stage crawl pipeline behind Section 5.2, run in order:
 | Script                 | Purpose                                                                                                                                                                                             |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `1_pwa_measurement.py` | Crawls the Tranco top 10,000 domains; checks each domain's manifest for installability criteria (`display`, `name`/`short_name`, `icons`)                                                           |
-| `2_pwa_picker.py`      | Filters the output to installable PWAs only, adds an empty `SSO_providers` column                                                                                                                   |
+| `2_pwa_picker.py`      | Filters the output to installable PWAs only                                                                                                                                                         |
 | `3_sso_finder.py`      | Visits each installable PWA, probes for SSO login options (homepage scan, modal interaction, common auth paths, network request logging), matches against regex patterns for 13 candidate providers |
 | `4_analyze.py`         | Aggregates per-provider adoption counts from the final CSV (produces the numbers behind Fig. 5)                                                                                                     |
 
@@ -77,7 +77,7 @@ Screenshots and demo recordings referenced throughout the paper, including:
 
 ---
 
-## Citation
+<!--## Citation
 
 If you use this artefact, please cite:
 
@@ -88,4 +88,4 @@ If you use this artefact, please cite:
   booktitle = {Proceedings of the ACM Web Conference 2027 (WWW '27)},
   year      = {2027}
 }
-```
+```-->
