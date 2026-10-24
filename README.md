@@ -72,8 +72,8 @@ Screenshots and demo recordings referenced throughout the paper, including:
 ## Reproducing the results
 
 1. **Web measurement (Section 5.2):** follow the `Web_Measurement/` instructions above.
-2. **Cross-browser comparison (Section 5.1):** install the PWA from `SSO_login/` in each browser listed in Table 1 and manually verify the trust-indicator behavior described there; exact browser versions used are listed in the table.
-3. **Attack PoC:** Install dependencies from `package.json` using `npm install` and run `SSO_login/server/server.js` to start server, go to `http://localhost:3005`, install the PWA, and follow the reproduction steps in the paper's Section 2 to observe the `start_url` divergence and the spoofed navigation bar.
+2. **Cross-browser comparison (Section 5.1):** install the PWA from `SSO_login/` in each browser listed in Table 1 and manually verify the trust-indicator behavior described there; exact browser versions used are listed in the table 1 in the paper.
+3. **Attack PoC:** Install dependencies from `SSO_login/package.json` using `npm install` and run `SSO_login/server/server.js` to start server, go to `http://localhost:3005`, install the PWA, and follow the reproduction steps in the paper's Section 2,3 and 4 to observe the `start_url` divergence, the spoofed navigation bar and 2FA bypass. Videos provided in `images_and_video` folder can provide a clearer picture.
 
 ---
 
